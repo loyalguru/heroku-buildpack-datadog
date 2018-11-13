@@ -87,7 +87,7 @@ fi
 
 # Uncomment APM configs and add the log file location.
 if [ -n "$DD_APM_TRACE_SEARCH" ]; then
-  sed -i -e"s|^# apm_config:$|apm_config:\n    analyzed_spans:\n        $DD_APM_SERVICE_NAME: 1\n    log_file: $DD_APM_LOG|" $DATADOG_CONF
+  sed -i -e"s|^# apm_config:$|apm_config:\n    analyzed_spans:\n        $DD_APM_SERVICE_SPANS\n    log_file: $DD_APM_LOG|" $DATADOG_CONF
 else
   sed -i -e"s|^# apm_config:$|apm_config:\n    log_file: $DD_APM_LOG|" $DATADOG_CONF
 fi
